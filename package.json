@@ -1,0 +1,57 @@
+{
+  "name": "node-express-api",
+  "version": "1.0.0",
+  "description": "A template repository for a Node.js API using Express.js and TypeScript.",
+  "main": "dist/server.js",
+  "author": "Pod Point Software Team <software@pod-point.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pod-Point/node-express-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Pod-Point/node-express-api/issues"
+  },
+  "homepage": "https://github.com/Pod-Point/node-express-api#readme",
+  "keywords": [
+    "Node",
+    "Express",
+    "TypeScript",
+    "API"
+  ],
+  "scripts": {
+    "build": "node_modules/.bin/tsc",
+    "build:watch": "node_modules/.bin/tsc -w",
+    "dev": "node_modules/.bin/concurrently -k -n \"TypeScript,Node\" \"npm run build:watch\" \"npm run start\"",
+    "lint": "node_modules/.bin/tslint 'src/**/*.{ts,tsx}'",
+    "lint:fix": "npm run lint -- --fix",
+    "start": "node_modules/.bin/nodemon .",
+    "test": "node_modules/.bin/jest",
+    "test:coverage": "node_modules/.bin/jest --coverage --runInBand --ci",
+    "test:watch": "node_modules/.bin/jest --watch",
+    "typeorm": "ts-node ./node_modules/typeorm/cli.js --config ormconfig.ts",
+    "postinstall": "test -f .env || cp -n .env.example .env"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.ts",
+      "!node_modules/**",
+      "!src/server.ts",
+      "!src/database/factories/**/*.ts",
+      "!src/database/migrations/**/*.ts",
+      "!src/types/**/*.ts"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "testRegex": "(/__tests__/.*\\.(test|spec))\\.(js?|ts?)$",
+    "transform": {
+      "^.+\\.ts?$": "ts-jest"
+    },
+    "setupFiles": [
+      "./src/__tests__/setup.ts"
+    ]
+  }
+}
