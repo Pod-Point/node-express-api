@@ -11,7 +11,7 @@ https://help.github.com/en/articles/creating-a-repository-from-a-template
 
 To install the latest version of this templates dependencies, run the following command:
 ```bash
-npm install --save @pod-point/typescript express http-status-codes mysql typeorm express-async-errors
+npm install --save @pod-point/typescript express http-status-codes mysql typeorm express-async-errors @hapi/joi
 ```
 
 To install the latest version of this templates  dev dependencies, run the following command:
