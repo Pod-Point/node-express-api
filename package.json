@@ -24,15 +24,17 @@
     "dev": "node_modules/.bin/concurrently -k -n \"TypeScript,Node\" \"npm run build:watch\" \"npm run start\"",
     "lint": "node_modules/.bin/tslint 'src/**/*.{ts,tsx}'",
     "lint:fix": "npm run lint -- --fix",
-    "start": "node_modules/.bin/nodemon .",
+    "start": "node_modules/.bin/nodemon ./dist/server.js",
     "test": "node_modules/.bin/jest",
     "test:coverage": "node_modules/.bin/jest --coverage --runInBand --ci",
     "test:watch": "node_modules/.bin/jest --watch",
-    "typeorm": "ts-node ./node_modules/typeorm/cli.js --config ormconfig.ts",
+    "typeorm": "ts-node ./node_modules/typeorm/cli.js --config dist/config/orm.js",
     "postinstall": "test -f .env || cp -n .env.example .env"
   },
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.ts",

@@ -1,16 +1,17 @@
 language: node_js
 
 node_js:
-- '8'
+  - '10'
 
 cache:
   directories:
   - node_modules
 
 after_success:
-- bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash)
 
 script:
-- npm run build
-- npm run test:coverage
-- npm run lint
+  - npm install --save @pod-point/typescript express http-status-codes mysql typeorm express-async-errors @hapi/joi && npm install --save-dev @types/express @types/faker @types/jest @types/node @types/supertest concurrently faker jest nodemon sqlite3 supertest ts-jest ts-node tslint tslint-eslint-rules typescript
+  - npm run build
+  - npm run lint
+  - npm run test:coverage

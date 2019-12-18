@@ -1,5 +1,5 @@
 import { SqliteConnectionOptions } from 'typeorm/driver/sqlite/SqliteConnectionOptions';
-import mysql from '../../ormconfig';
+import mysql from '../config/orm';
 
 const sqlite: SqliteConnectionOptions = {
     database: `.database/${process.env.DB_DATABASE}`,
