@@ -1,0 +1,7 @@
+openapi: 3.0.0
+info:
+  title: Node express API
+  description: A template repository for a Node.js API using Express.js and TypeScript.
+  contact:
+    email: software@pod-point.com
+  version: 1.0.0
